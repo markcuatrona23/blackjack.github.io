@@ -1,4 +1,4 @@
-# Playing around with JS and created a mini Blackjack game with minimal features
+## Playing around with JS and created a mini Blackjack game with minimal features
 
 ![blackjack_home](https://user-images.githubusercontent.com/41130871/52399701-d7b2c880-2a71-11e9-99f2-647fd338a700.png)
 
