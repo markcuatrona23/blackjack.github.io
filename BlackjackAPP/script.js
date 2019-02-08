@@ -214,9 +214,6 @@ function showStatus() {
   }
 }
 
-//for (var i = 0; i < deck.length; i++){
-//textArea.innerText += '\n' + getCardString(deck[i]);
-//}
 
 function getNextCard() {
   return deck.shift();
