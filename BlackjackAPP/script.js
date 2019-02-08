@@ -201,7 +201,9 @@ function showStatus() {
     ")\n\n";
 
   if (gameOver) {
-    if (playerWon) {
+    if (playerScore === 21 && dealerScore != 21) {
+      textArea.innerText += "BLACKJACK!!" + "\n";
+    } if (playerWon) {
       textArea.innerText += "YOU WIN!";
     } else {
       textArea.innerText += "DEALER WINS";
