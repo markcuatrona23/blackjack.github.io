@@ -39,6 +39,8 @@ stayButton.style.display = "none";
 showStatus();
 
 newGameButton.addEventListener("click", function() {
+  textArea.classList.remove("animated", "flash", "infinite");
+
   gameStarted = true;
   gameOver = false;
   playerWon = false;
@@ -202,8 +204,11 @@ function showStatus() {
 
   if (gameOver) {
     if (playerScore === 21 && dealerScore != 21) {
+      drop();
+      textArea.classList.add("animated", "flash", "infinite");
       textArea.innerText += "BLACKJACK!!" + "\n";
-    } if (playerWon) {
+    }
+    if (playerWon) {
       textArea.innerText += "YOU WIN!";
     } else {
       textArea.innerText += "DEALER WINS";
@@ -214,9 +219,61 @@ function showStatus() {
   }
 }
 
+//for (var i = 0; i < deck.length; i++){
+//textArea.innerText += '\n' + getCardString(deck[i]);
+//}
 
 function getNextCard() {
   return deck.shift();
 }
 
 console.log("Welcome to Blackjack!");
+
+// confetti
+
+function drop() {
+  // 5 seconds
+  var end = Date.now() + 5 * 1000;
+
+  // left and right confetti function
+  (function frame() {
+    // launch a few confetti from the left edge
+    confetti({
+      particleCount: 7,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 }
+    });
+    // and launch a few from the right edge
+    confetti({
+      particleCount: 7,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 }
+    });
+
+    // keep going until we are out of time
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+
+  // fireworks confetti
+
+  // var interval = setInterval(function() {
+  //   if (Date.now() > end) {
+  //     return clearInterval(interval);
+  //   }
+
+  //   confetti({
+  //     startVelocity: 30,
+  //     spread: 360,
+  //     ticks: 60,
+  //     origin: {
+  //       x: Math.random(),
+  //       // since they fall down, start a bit higher than random
+  //       y: Math.random() - 0.2
+  //     }
+  //   });
+  // }, 100);
+}
