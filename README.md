@@ -10,7 +10,7 @@
 ![playerwins](https://user-images.githubusercontent.com/41130871/52399765-0466e000-2a72-11e9-8430-ac9997875311.png)
 
 ### Blackjack
-![21youwin](https://user-images.githubusercontent.com/41130871/52453587-f7430300-2afc-11e9-804e-85e2320c7e50.png)
+![confetti_blackjack](https://user-images.githubusercontent.com/41130871/52611235-570d1700-2e39-11e9-8ff6-bd26857d63ef.png)
 
 ### Dealer Wins
 ![dealerwins](https://user-images.githubusercontent.com/41130871/52399775-0af55780-2a72-11e9-8f46-cb4a0b6f8373.png)
