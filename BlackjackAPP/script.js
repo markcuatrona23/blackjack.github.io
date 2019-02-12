@@ -24,6 +24,7 @@ let textArea = document.getElementById("text-area");
 let newGameButton = document.getElementById("new-game-btn");
 let hitButton = document.getElementById("hit-btn");
 let stayButton = document.getElementById("stay-btn");
+let logo = document.getElementById("logo");
 
 let gameStarted = false,
   gameOver = false,
@@ -38,8 +39,18 @@ hitButton.style.display = "none";
 stayButton.style.display = "none";
 showStatus();
 
+//remove logo animation
+function removeLogoAni() {
+  logo.classList.remove("animated", "wobble");
+  logo.removeEventListener("animationend", handleAnimationEnd);
+}
+
 newGameButton.addEventListener("click", function() {
   textArea.classList.remove("animated", "flash", "infinite");
+  logo.classList.add("animated", "wobble");
+  logo.addEventListener("animationend", function() {
+    removeLogoAni();
+  });
 
   gameStarted = true;
   gameOver = false;
