@@ -1,9 +1,11 @@
 h1.italic {
   font-style: italic;
 }
-.container{
+
+.container {
   overflow: auto;
 }
+
 .imgSize {
   max-height: 200px;
   max-width: 350px;
@@ -79,4 +81,3 @@ body {
   position: relative;
   /* min-height: 100vh; */
 }
-
