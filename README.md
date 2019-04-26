@@ -1,19 +1,22 @@
-## Playing around with JS and created a mini Blackjack game with minimal features
+## Playing around with JS and created a mini Blackjack game
 
 ### Here's a little preview: 
-![blackjackgif](https://user-images.githubusercontent.com/41130871/52612440-8eca8d80-2e3e-11e9-9cd0-dc7a86760a8e.gif)
+![BlackJackDemo](https://user-images.githubusercontent.com/41130871/56786107-9c8c7f80-67ac-11e9-936d-8d2d46f604fe.gif)
 
 ### Landing Page
-![blackjack_home](https://user-images.githubusercontent.com/41130871/52399701-d7b2c880-2a71-11e9-99f2-647fd338a700.png)
+![LandingPageBlackjack](https://user-images.githubusercontent.com/41130871/56786391-a367c200-67ad-11e9-84c3-6e8637121969.png)
 
 ### New Game / Deal Cards
-![dealcards](https://user-images.githubusercontent.com/41130871/52399744-f2853d00-2a71-11e9-80a6-18976db8ba39.png)
+![NewGameBlackjack](https://user-images.githubusercontent.com/41130871/56786256-3ce2a400-67ad-11e9-942a-9d5aeb27026b.png)
 
 ### Player Wins
-![playerwins](https://user-images.githubusercontent.com/41130871/52399765-0466e000-2a72-11e9-8430-ac9997875311.png)
-
-### Blackjack
-![confetti_blackjack](https://user-images.githubusercontent.com/41130871/52611235-570d1700-2e39-11e9-8ff6-bd26857d63ef.png)
+![PlayerWinsBlackjack](https://user-images.githubusercontent.com/41130871/56786278-52f06480-67ad-11e9-98ba-134cf30373c9.png)
 
 ### Dealer Wins
-![dealerwins](https://user-images.githubusercontent.com/41130871/52399775-0af55780-2a72-11e9-8f46-cb4a0b6f8373.png)
+![DealerWinsBlackjack](https://user-images.githubusercontent.com/41130871/56786291-61d71700-67ad-11e9-93a1-8a90cfc219b5.png)
+
+### Blackjack
+![BlackJack!](https://user-images.githubusercontent.com/41130871/56786302-6d2a4280-67ad-11e9-8a80-51bf88113e43.png)
+
+
+
