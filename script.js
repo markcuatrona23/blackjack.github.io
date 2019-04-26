@@ -135,7 +135,7 @@ function getCardString (card){
 function getImageCharacter (cardNum){
 	switch (cardNum) {
 		case 'Ace':
-			return 'A';
+			return 'Ace';
 		case 'Two':
 			return '2';
 		case 'Three':
