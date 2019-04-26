@@ -42,7 +42,7 @@ showStatus();
 //remove logo animation
 function removeLogoAni() {
   logo.classList.remove("animated", "wobble");
-  logo.removeEventListener("animationend", handleAnimationEnd);
+  // logo.removeEventListener("animationend", handleAnimationEnd);
 }
 
 newGameButton.addEventListener("click", function() {
@@ -71,7 +71,22 @@ hitButton.addEventListener("click", function() {
   playerCards.push(getNextCard());
   checkForEndOfGame();
   showStatus();
+
 });
+
+function createImagePlayer(img) {
+  let image = document.createElement("img");
+  image.setAttribute("src", `images/${img}.jpg`);
+  image.setAttribute("style", "height: 200px");
+  document.getElementById("player").appendChild(image);
+}
+
+function createImageDealer(img) {
+  let image = document.createElement("img");
+  image.setAttribute("src", `images/${img}.jpg`);
+  image.setAttribute("style", "height: 200px");
+  document.getElementById("dealer").appendChild(image);
+}
 
 stayButton.addEventListener("click", function() {
   gameOver = true;
@@ -85,7 +100,8 @@ function createDeck() {
     for (let valueIdx = 0; valueIdx < values.length; valueIdx++) {
       let card = {
         suit: suits[suitIdx],
-        value: values[valueIdx]
+        value: values[valueIdx],
+        image: getImageCharacter(values[valueIdx]) + suits[suitIdx].split("")[0]
       };
       deck.push(card);
     }
@@ -106,6 +122,37 @@ function getCardString(card) {
   return card.value + " of " + card.suit;
 }
 
+function getImageCharacter(cardNum) {
+  switch (cardNum) {
+    case "Ace":
+      return "A";
+    case "Two":
+      return "2";
+    case "Three":
+      return "3";
+    case "Four":
+      return "4";
+    case "Five":
+      return "5";
+    case "Six":
+      return "6";
+    case "Seven":
+      return "7";
+    case "Eight":
+      return "8";
+    case "Nine":
+      return "9";
+    case "Ten":
+      return "10";
+    case "Jack":
+      return "J";
+    case "Queen":
+      return "Q";
+    case "King":
+      return "K";
+  }
+}
+
 function getCardNumericValue(card) {
   switch (card.value) {
     case "Ace":
@@ -123,7 +170,7 @@ function getCardNumericValue(card) {
     case "Seven":
       return 7;
     case "Eight":
-      return 9;
+      return 8;
     case "Nine":
       return 9;
     default:
@@ -189,50 +236,55 @@ function showStatus() {
     return;
   }
 
-  let dealerCardString = "";
-  for (let i = 0; i < dealerCards.length; i++) {
-    dealerCardString += getCardString(dealerCards[i]) + "\n";
-  }
-
-  let playerCardString = "";
-  for (let i = 0; i < playerCards.length; i++) {
-    playerCardString += getCardString(playerCards[i]) + "\n";
-  }
-
   updateScores();
 
-  textArea.innerText =
-    "Dealer has: \n" +
-    dealerCardString +
-    "(score: " +
-    dealerScore +
-    ")\n\n" +
-    "You have: \n" +
-    playerCardString +
-    "(score: " +
-    playerScore +
-    ")\n\n";
+  textArea.innerHTML = `<div>
+  <div><h5>Dealer has: <i><b style="color: green">${dealerScore}</b></i> </h5>
+  <div id="dealer"><img style="height: 200px" src="images/${
+    dealerCards[0].image
+  }.jpg"/><img style="height: 200px" src="images/${dealerCards[1].image}.jpg"/>
+  
+  </div></div>
+  <br>
+  <div><h5>You have: <i><b style="color: green">${playerScore}</b></i> </h5>
+  <div id="player"><img style="height: 200px" src="images/${
+    playerCards[0].image
+  }.jpg"/><img style="height: 200px" src="images/${playerCards[1].image}.jpg"/>
+  </div>
+  <br>
+  </div>
+  </div>`;
+
+
+  if (playerCards.length < 12) {
+    for (let i = 2; i < playerCards.length; i++) {
+      createImagePlayer(playerCards[i].image);
+    }
+  }
+
+  if (dealerCards.length < 12) {
+    for (let i = 2; i < dealerCards.length; i++) {
+      createImageDealer(dealerCards[i].image);
+    }
+  }
 
   if (gameOver) {
     if (playerScore === 21 && dealerScore != 21) {
-      drop();
+      sideConfetti();
       textArea.classList.add("animated", "flash", "infinite");
-      textArea.innerText += "BLACKJACK!!" + "\n";
+      textArea.innerHTML += "BLACKJACK!! ";
     }
     if (playerWon) {
-      textArea.innerText += "YOU WIN!";
+      confetti();
+      textArea.innerHTML += "YOU WIN!";
     } else {
-      textArea.innerText += "DEALER WINS";
+      textArea.innerHTML += "DEALER WINS";
     }
     newGameButton.style.display = "inline";
     hitButton.style.display = "none";
     stayButton.style.display = "none";
   }
 }
-
-//for (var i = 0; i < deck.length; i++){
-//textArea.innerText += '\n' + getCardString(deck[i]);
-//}
 
 function getNextCard() {
   return deck.shift();
@@ -242,7 +294,7 @@ console.log("Welcome to Blackjack!");
 
 // confetti
 
-function drop() {
+function sideConfetti() {
   // 5 seconds
   var end = Date.now() + 5 * 1000;
 

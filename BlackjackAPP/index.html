@@ -3,23 +3,36 @@
   <head>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="/node_modules/animate.css/animate.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
-    <div class="container wrapper">
-      <div class="olive">
-        <div class="game">
-          <h1 class="italic animated lightSpeedIn" id="title">
-            Blackjack!
-          </h1>
-          <img src="images/zLogo.jpg" alt="LOGO" class="imgSize" />
-          <p id="text-area">Let's play BlackJack!</p>
-          <button id="new-game-btn" class="newGame">New Game</button>
-          <button id="hit-btn" class="hit">Hit</button>
-          <button id="stay-btn" class="stay">Stay</button>
+    <div class="container">
+      <div class="grid wrapper">
+        <div class="olive">
+          <div class="game">
+            <h1 class="italic animated lightSpeedIn" id="title">
+              Blackjack!
+            </h1>
+            <img src="images/zLogo.jpg" alt="LOGO" class="imgSize" id="logo" />
+            <br /><br />
+            <div id="text-area">Let's play BlackJack!</div>
+            <br />
+            <button id="new-game-btn" class="newGame">New Game</button>
+            <button id="hit-btn" class="hit">Hit</button>
+            <button id="stay-btn" class="stay">Stay</button>
+            <div id="test"></div>
+          </div>
         </div>
       </div>
     </div>
+    <img src="images/AD.jpg" />
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@0.0.2/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
